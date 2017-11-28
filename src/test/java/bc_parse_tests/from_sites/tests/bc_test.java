@@ -1,11 +1,10 @@
-package testuniverse.easyqa.tests;
+package bc_parse_tests.from_sites.tests;
 
 /**
  * Created by Любовь on 28.11.2017.
  * */
  import org.openqa.selenium.chrome.ChromeDriver;
  import org.openqa.selenium.chrome.ChromeOptions;
- import org.openqa.selenium.remote.DesiredCapabilities;
  import org.testng.annotations.BeforeMethod;
  import org.testng.annotations.AfterMethod;
  import org.testng.annotations.Test;
@@ -54,7 +53,6 @@ package testuniverse.easyqa.tests;
     bcWallet = split[2];
    line = reader.readLine();
  }
-
 
   // qiwiWallet = "79057810930";
    //userEmail = "a.bogdanov@geesoft.ru";

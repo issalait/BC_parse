@@ -1,4 +1,4 @@
-package testuniverse.easyqa.tests;
+package bc_parse_tests.from_sites.tests;
 
 import java.io.File;
 
