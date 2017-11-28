@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6596dafc-2cf1-4ece-9fbe-8ca5e241e6fa" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/bc_parse_tests/from_sites/tests/BCData.java" afterPath="$PROJECT_DIR$/src/test/java/bc_parse_tests/from_sites/tests/BCData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/bc_parse_tests/from_sites/tests/bc_test.java" afterPath="$PROJECT_DIR$/src/test/java/bc_parse_tests/from_sites/tests/bc_test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/outputData_20171128.csv" afterPath="$PROJECT_DIR$/src/test/resources/outputData_20171128.csv" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -26,21 +24,11 @@
       <file leaf-file-name="bc_test.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/bc_parse_tests/from_sites/tests/bc_test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="39" column="31" lean-forward="true" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+            <state relative-caret-position="459">
+              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BCData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/bc_parse_tests/from_sites/tests/BCData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -721,6 +709,9 @@
     <history-entry file="bc_test - 2017.11.28 at 20h 31m 50s.xml">
       <configuration name="bc_test" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="bc_test - 2017.11.28 at 20h 41m 57s.xml">
+      <configuration name="bc_test" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1924" height="1084" extended-state="0" />
@@ -775,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/bc_parse_tests/from_sites/tests/bc_test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="39" column="31" lean-forward="true" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+        <state relative-caret-position="459">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

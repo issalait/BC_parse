@@ -24,12 +24,20 @@ package bc_parse_tests.from_sites.tests;
   String bcWallet;
   String targetWallet;
   String targetName;
+  String chromeProfile;
   File outputData;
      @BeforeMethod
      public void setUp() throws Exception {
+      BufferedReader reader = new BufferedReader (new FileReader(new File("src/test/resources/chromeProfile.csv")));
+      String line = reader.readLine();
+      while (line != null) {
+       String [] split = line.split(";");
+       chromeProfile = split[0];
+       line = reader.readLine();
+      }
 
       ChromeOptions options = new ChromeOptions();
-      options.addArguments("user-data-dir=C:/Users/Любовь/AppData/Local/Google/Chrome/User Data");
+      options.addArguments("user-data-dir="+chromeProfile);
       options.addArguments("--start-maximized");
       wd = new ChromeDriver(options);
 
