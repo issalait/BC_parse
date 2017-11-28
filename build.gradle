@@ -1,10 +1,33 @@
+import org.gradle.api.tasks.compile.JavaCompile
+import org.gradle.api.tasks.testing.Test
+
 apply plugin: 'java'
 
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
 repositories {
 	mavenCentral()
+}
+
+configurations {
+	agent
 }
 
 dependencies {
 	compile 'org.testng:testng:6.11'
 	compile 'org.seleniumhq.selenium:selenium-java:2.53.1'
+	compile 'com.beust:jcommander:1.72'
+	agent "org.aspectj:aspectjweaver:1.8.10"
+}
+
+task parseStart (type : Test) {
+	useTestNG {
+		suites "src/test/resources/testng.xml"
+	}
+
+}
+
+parseStart.doFirst {
+	jvmArgs "-javaagent:${configurations.agent.singleFile}"
 }
