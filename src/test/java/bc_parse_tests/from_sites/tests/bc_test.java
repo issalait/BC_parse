@@ -35,6 +35,8 @@ package bc_parse_tests.from_sites.tests;
        chromeProfile = split[0];
        line = reader.readLine();
       }
+
+      System.out.println("chromeProfile is : ");
       System.out.println(chromeProfile);
       ChromeOptions options = new ChromeOptions();
       options.addArguments("user-data-dir="+chromeProfile);
