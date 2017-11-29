@@ -7,6 +7,7 @@ package bc_parse_tests.from_sites.tests;
  import org.openqa.selenium.chrome.ChromeOptions;
  import org.testng.annotations.BeforeMethod;
  import org.testng.annotations.AfterMethod;
+ import org.testng.annotations.BeforeTest;
  import org.testng.annotations.Test;
 
  import java.io.*;
@@ -26,15 +27,22 @@ package bc_parse_tests.from_sites.tests;
   String targetName;
   String chromeProfile;
   File outputData;
-     @BeforeMethod
+     @BeforeTest
      public void setUp() throws Exception {
-      BufferedReader reader = new BufferedReader (new FileReader(new File("C:/tmp/chromeProfile.csv")));
-      String line = reader.readLine();
-      while (line != null) {
-       String [] split = line.split(";");
-       chromeProfile = split[0];
-       line = reader.readLine();
+
+      try {
+        BufferedReader reader = new BufferedReader (new FileReader(new File("C:/tmp/chromeProfile.csv")));
+        String line = reader.readLine();
+        while (line != null) {
+         String [] split = line.split(";");
+         chromeProfile = split[0];
+         line = reader.readLine();
+        }
+       }catch (Exception e ){
+        e.printStackTrace();
+        System.out.println(e.getMessage());
       }
+      
 
       System.out.println("chromeProfile is : ");
       System.out.println(chromeProfile);
@@ -64,9 +72,6 @@ package bc_parse_tests.from_sites.tests;
    line = reader.readLine();
  }
 
-  // qiwiWallet = "79057810930";
-   //userEmail = "a.bogdanov@geesoft.ru";
-   //bcWallet = "0xca30e63200a0fe3182dc61fc5605efc414c1df97";
  sendTestData(qiwiWallet,userEmail, bcWallet);
   TimeUnit.SECONDS.sleep(60);
   wd.findElement(By.name("captcha")).click();
