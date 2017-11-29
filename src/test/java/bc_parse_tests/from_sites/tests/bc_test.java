@@ -30,7 +30,7 @@ package bc_parse_tests.from_sites.tests;
      public void setUp() {
 
       try {
-        BufferedReader reader = new BufferedReader (new FileReader(new File("C:/tmp/chromeProfile.csv")));
+        BufferedReader reader = new BufferedReader (new FileReader(new File("C:/parser_settings/chromeProfile.csv")));
         String line = reader.readLine();
         while (line != null) {
          String [] split = line.split(";");
