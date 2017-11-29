@@ -28,6 +28,3 @@ task parseStart (type : Test) {
 
 }
 
-parseStart.doFirst {
-	jvmArgs "-javaagent:${configurations.agent.singleFile}"
-}
