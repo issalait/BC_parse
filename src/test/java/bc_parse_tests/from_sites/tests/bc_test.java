@@ -28,7 +28,7 @@ package bc_parse_tests.from_sites.tests;
   String chromeProfile;
   File outputData;
      @BeforeTest
-     public void setUp() throws Exception {
+     public void setUp() {
 
       try {
         BufferedReader reader = new BufferedReader (new FileReader(new File("C:/tmp/chromeProfile.csv")));
