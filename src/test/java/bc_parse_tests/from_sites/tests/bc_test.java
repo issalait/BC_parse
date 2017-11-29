@@ -5,7 +5,6 @@ package bc_parse_tests.from_sites.tests;
  * */
  import org.openqa.selenium.chrome.ChromeDriver;
  import org.openqa.selenium.chrome.ChromeOptions;
- import org.testng.annotations.BeforeMethod;
  import org.testng.annotations.AfterMethod;
  import org.testng.annotations.BeforeTest;
  import org.testng.annotations.Test;
@@ -74,8 +73,6 @@ package bc_parse_tests.from_sites.tests;
     bcWallet = split[2];
    line = reader.readLine();
  }
-  System.out.println("2) inputData is : ");
-  System.out.println(qiwiWallet+ " " + userEmail+ " " + bcWallet);
 
  sendTestData(qiwiWallet,userEmail, bcWallet);
   TimeUnit.SECONDS.sleep(60);
@@ -85,13 +82,11 @@ package bc_parse_tests.from_sites.tests;
   targetWallet = wd.findElement(By.id("finish_kard")).getText();
   saveData(targetWallet);
 
-
  }
 
   private void saveData(String targetWallet) throws IOException {
    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
    targetName = "outputData_"+sdf.format( System.currentTimeMillis() )+".csv";
-
    Writer writer = new FileWriter("src/test/resources/"+targetName, true);
    writer.write(String.format("%s;%s\n",targetWallet, java.util.Calendar.getInstance().getTime()));
    writer.close();
