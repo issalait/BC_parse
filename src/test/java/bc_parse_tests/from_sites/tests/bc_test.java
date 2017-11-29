@@ -42,7 +42,7 @@ package bc_parse_tests.from_sites.tests;
         e.printStackTrace();
         System.out.println(e.getMessage());
       }
-      
+
 
       System.out.println("chromeProfile is : ");
       System.out.println(chromeProfile);
@@ -56,6 +56,9 @@ package bc_parse_tests.from_sites.tests;
 
  @Test
  public void bc_test() throws IOException, InterruptedException {
+  System.out.println("2) chromeProfile is : ");
+  System.out.println(chromeProfile);
+
  wd.get("https://fastchange.cc/");
  wd.findElement(By.cssSelector("span.bank_name")).click();
  wd.findElement(By.xpath("//ul[@id='calculation_param']//span[.='Киви RUR']")).click();
@@ -71,6 +74,8 @@ package bc_parse_tests.from_sites.tests;
     bcWallet = split[2];
    line = reader.readLine();
  }
+  System.out.println("2) inputData is : ");
+  System.out.println(qiwiWallet+ " " + userEmail+ " " + bcWallet);
 
  sendTestData(qiwiWallet,userEmail, bcWallet);
   TimeUnit.SECONDS.sleep(60);
