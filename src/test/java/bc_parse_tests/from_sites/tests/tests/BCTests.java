@@ -51,47 +51,46 @@ public class BCTests extends TestBase {
     @Test
     public void bc_test2() throws InterruptedException, IOException {
         url="https://betatransfer.net/exchange_QIWIRUB_BTC/";
-        app.goToExchangerSite(url);
+        app.getNavHelper().goToExchangerSite(url);
         setTestData();
 
-        app.typeTextIntoElementByID("account1", bcData.getQiwiWallet());
-        app.clearElementByName("sum1");
-        app.typeTextIntoElementByName("sum1", "10000");
-        app.scrollDown("500");
-        app.typeTextIntoElementByID("cf6", bcData.getEmail());
-        app.typeTextIntoElementByID("account2",bcData.getBCWallet());
-        app.clickOnElByCss("input.xchange_submit");
+        app.getBaseHelper().typeTextIntoElementByID("account1", bcData.getQiwiWallet());
+        app.getBaseHelper().clearElementByName("sum1");
+        app.getBaseHelper().typeTextIntoElementByName("sum1", "10000");
+        app.getNavHelper().scrollDown("500");
+        app.getBaseHelper().typeTextIntoElementByID("cf6", bcData.getEmail());
+        app.getBaseHelper().typeTextIntoElementByID("account2",bcData.getBCWallet());
+        app.getBaseHelper().clickOnElByCss("input.xchange_submit");
         app.waitPls(10);
         System.out.println("Прошли первую страницу: ");
-        app.clickOnElByXpath("//*[@id='exchange_status_html']/form/div[2]/div/div[4]/div");
+        app.getBaseHelper().clickOnElByXpath("//*[@id='exchange_status_html']/form/div[2]/div/div[4]/div");
         app.waitPls(5);
-        app.scrollDown("250");
-        app.clickOnElByID("check_rule_step_input");
+        app.getNavHelper().scrollDown("250");
+        app.getBaseHelper().clickOnElByID("check_rule_step_input");
         app.waitPls(5);
         System.out.println("Прошли вторую страницу: ");
-        targetWallet = app.getTextByXpath("//*[@id='exchange_status_html']/div[2]/div/div[2]/div/div[1]/ol/li[2]/span/strong");
+        targetWallet = app.getBaseHelper().getTextByXpath("//*[@id='exchange_status_html']/div[2]/div/div[2]/div/div[1]/ol/li[2]/span/strong");
         System.out.println("targetWallet: "+targetWallet);
-        app.cancelOrder();
+        app.getOrderHelper().cancelOrder();
         app.saveData(targetWallet, url);
     }
 
     @Test
     public void bc_test1() throws IOException, InterruptedException {
         url="https://fastchange.cc/";
-        app.goToExchangerSite(url);
-        app.selectQiwiRur();
-        app.selectBcoin();
+        app.getNavHelper().goToExchangerSite(url);
+        app.getOrderHelper().selectQiwiRur();
+        app.getOrderHelper().selectBcoin();
         setTestData();
-        app.typeTextIntoElementByID("wallet_one", bcData.getQiwiWallet());
-        app.clearElementByName("give_money");
-        app.typeTextIntoElementByName("give_money", "1000");
-        app.typeTextIntoElementByID("e_mail", bcData.getEmail());
-        app.typeTextIntoElementByID("wallet_two",bcData.getBCWallet());
+        app.getBaseHelper().typeTextIntoElementByID("wallet_one", bcData.getQiwiWallet());
+        app.getBaseHelper().clearElementByName("give_money");
+        app.getBaseHelper().typeTextIntoElementByName("give_money", "1000");
+        app.getBaseHelper().typeTextIntoElementByID("e_mail", bcData.getEmail());
+        app.getBaseHelper().typeTextIntoElementByID("wallet_two",bcData.getBCWallet());
         app.waitPls(60);
-        app.clickOnElementByName("captcha");
-        app.clickOnElByXpath("//ul[@id='application_param']/li[9]/input");
-        app.waitPls(10);
-        targetWallet = app.getTextByID("finish_kard");
+        app.getBaseHelper().clickOnElByXpath("//ul[@id='application_param']/li[9]/input");
+        app.waitPls(3);
+        targetWallet = app.getBaseHelper().getTextByID("finish_kard");
         app.saveData(targetWallet, url);
 
     }
