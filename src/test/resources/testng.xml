@@ -3,7 +3,7 @@
 <suite name="Suite1" verbose="10" >
     <test name="Cards" >
         <classes>
-            <class name="bc_parse_tests.from_sites.tests.bc_test" />
+            <class name="bc_parse_tests.from_sites.tests.BCTests" />
         </classes>
     </test>
 </suite>
