@@ -62,11 +62,20 @@ public class BaseHelper {
         wd.findElement(By.name(elementName)).sendKeys(textToInput);
     }
 
+    public void typeTextIntoElementByXpath(String elementXpath, String textToInput) {
+        clickOnElementByXpath(elementXpath);
+        wd.findElement(By.xpath(elementXpath)).sendKeys(textToInput);
+    }
+
     public void clearElementByName(String elementName) {
         wd.findElement(By.name(elementName)).clear();
     }
 
     public void clickOnElementByName(String elementName) {
         wd.findElement(By.name(elementName)).click();
+    }
+
+    public void clickOnElementByXpath(String elementXpath) {
+        wd.findElement(By.xpath(elementXpath)).click();
     }
 }

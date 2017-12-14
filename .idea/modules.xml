@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/bc_parse.iml" filepath="$PROJECT_DIR$/bc_parse.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/bc_parse_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bc_parse_main.iml" group="bc_parse" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/bc_parse_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bc_parse_test.iml" group="bc_parse" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bc_qiwi_parse.iml" filepath="$PROJECT_DIR$/.idea/modules/bc_qiwi_parse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bc_qiwi_parse_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bc_qiwi_parse_main.iml" group="bc_qiwi_parse" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bc_qiwi_parse_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bc_qiwi_parse_test.iml" group="bc_qiwi_parse" />
     </modules>
   </component>
 </project>

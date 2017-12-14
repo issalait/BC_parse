@@ -47,7 +47,7 @@ public class BCTests extends TestBase {
         bcData = new BCData(qiwiWallet,userEmail,bcWallet);
 
     }
-
+/*
     @Test
     public void bc_test2() throws InterruptedException, IOException {
         url="https://betatransfer.net/exchange_QIWIRUB_BTC/";
@@ -74,9 +74,11 @@ public class BCTests extends TestBase {
         app.getOrderHelper().cancelOrder();
         app.saveData(targetWallet, url);
     }
+*/
+
 
     @Test
-    public void bc_test1() throws IOException, InterruptedException {
+    public void fastchage_parse() throws IOException, InterruptedException {
         url="https://fastchange.cc/";
         app.getNavHelper().goToExchangerSite(url);
         app.getOrderHelper().selectQiwiRur();
@@ -95,5 +97,29 @@ public class BCTests extends TestBase {
 
     }
 
+
+    @Test
+    public void bankomat_parse() throws IOException, InterruptedException {
+
+        setTestData();
+        url="https://bankcomat.com/qiwi-na-bitcoin.html";
+        app.getNavHelper().goToExchangerSite(url);
+        app.waitPls(3);
+        app.getBaseHelper().typeTextIntoElementByID("give_col","5000");
+        app.getBaseHelper().typeTextIntoElementByName("from_acc",bcData.getQiwiWallet());
+        app.getBaseHelper().typeTextIntoElementByXpath("//div[@id='props']/div[2]/div/input",bcData.getEmail());
+        app.waitPls(1);
+        app.getBaseHelper().typeTextIntoElementByXpath("//*[@id='props']/div[3]/div/input",bcData.getBCWallet());
+        app.waitPls(2);
+        app.getBaseHelper().clickOnElByID("goto-payment");
+        app.waitPls(2);
+        targetWallet = app.getBaseHelper().getTextByXpath("//*[@id='order-confirmation-tab']/div/div/div[1]/div/ul/li[1]/span/p/span[1]/code");
+        System.out.println("targetWallet: "+targetWallet);
+        app.getBaseHelper().clickOnElByID("order-cancel");
+        app.waitPls(1);
+        app.getBaseHelper().clickOnElByID("act-yes");
+        app.saveData(targetWallet, url);
+
+    }
 
 }
