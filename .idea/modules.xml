@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/bc_parse.iml" filepath="$PROJECT_DIR$/bc_parse.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bc_parse_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bc_parse_main.iml" group="bc_parse" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bc_parse_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bc_parse_test.iml" group="bc_parse" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bc_qiwi_parse.iml" filepath="$PROJECT_DIR$/.idea/modules/bc_qiwi_parse.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bc_qiwi_parse_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bc_qiwi_parse_main.iml" group="bc_qiwi_parse" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bc_qiwi_parse_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bc_qiwi_parse_test.iml" group="bc_qiwi_parse" />
+      <module fileurl="file://$PROJECT_DIR$/bc_qiwi_parse_allure.iml" filepath="$PROJECT_DIR$/bc_qiwi_parse_allure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bc_qiwi_parse_allure_main.iml" filepath="$PROJECT_DIR$/.idea/modules/bc_qiwi_parse_allure_main.iml" group="bc_qiwi_parse_allure" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bc_qiwi_parse_allure_test.iml" filepath="$PROJECT_DIR$/.idea/modules/bc_qiwi_parse_allure_test.iml" group="bc_qiwi_parse_allure" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bitcoin-bc_qiwi_parse_allure.iml" filepath="$PROJECT_DIR$/.idea/modules/bitcoin-bc_qiwi_parse_allure.iml" />
     </modules>
   </component>
 </project>

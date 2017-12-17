@@ -4,6 +4,7 @@ package bc_parse_tests.from_sites.tests.tests;
  * Created by Любовь on 28.11.2017.
  */
 
+import jdk.nashorn.internal.runtime.NumberToString;
 import objectModels.BCData;
 import org.testng.annotations.Test;
 
@@ -74,7 +75,9 @@ public class BCTests extends TestBase {
         app.getOrderHelper().cancelOrder();
         app.saveData(targetWallet, url);
     }
-*/
+    */
+
+
 
 
     @Test
@@ -86,7 +89,7 @@ public class BCTests extends TestBase {
         setTestData();
         app.getBaseHelper().typeTextIntoElementByID("wallet_one", bcData.getQiwiWallet());
         app.getBaseHelper().clearElementByName("give_money");
-        app.getBaseHelper().typeTextIntoElementByName("give_money", "1000");
+        app.getBaseHelper().typeTextIntoElementByName("give_money", "10000");
         app.getBaseHelper().typeTextIntoElementByID("e_mail", bcData.getEmail());
         app.getBaseHelper().typeTextIntoElementByID("wallet_two",bcData.getBCWallet());
         app.waitPls(60);
@@ -96,6 +99,7 @@ public class BCTests extends TestBase {
         app.saveData(targetWallet, url);
 
     }
+
 
 
     @Test
@@ -121,5 +125,72 @@ public class BCTests extends TestBase {
         app.saveData(targetWallet, url);
 
     }
+
+    @Test
+    public void cash365_parse() throws IOException, InterruptedException {
+        setTestData();
+        url="http://365cash.co/";
+        app.getNavHelper().goToExchangerSite(url);
+        app.waitPls(2);
+        app.getBaseHelper().clickOnElByID("sell-currency");
+        app.waitPls(2);
+        app.getBaseHelper().clickOnElByXpath("//*[@id='sell-currency']/ul/li[4]/a");
+        app.waitPls(1);
+        app.getBaseHelper().clearAndTypeTextIntoElementByID("orderform-sell_amount","15000");
+        app.getBaseHelper().clickOnElByID("buy-currency");
+        app.waitPls(2);
+        app.getBaseHelper().clickOnElByXpath("//*[@id='buy-currency']/ul/li[4]/a");
+        app.waitPls(2);
+        app.getBaseHelper().clickOnElByXpath("//*[@id='order-form']/div[4]/button");
+        app.waitPls(3);
+        app.getBaseHelper().typeTextIntoElementByID("orderform-sell_source",bcData.getQiwiWallet());
+        app.getBaseHelper().typeTextIntoElementByID("orderform-buy_target",bcData.getBCWallet());
+        app.getBaseHelper().typeTextIntoElementByID("orderform-user_email",bcData.getEmail());
+        app.getBaseHelper().clickOnElByID("orderform-rules_agreement");
+        app.getBaseHelper().clickOnElByID("submit-form-btn");
+        app.waitPls(3);
+        app.getBaseHelper().clickOnElByXpath("//*[@id='w1']/button");
+        app.waitPls(3);
+        targetWallet =app.getBaseHelper().getTextByXpath("html/body/div[1]/div[2]/div/div[2]/p[17]/span/strong");
+        System.out.println("targetWallet: "+targetWallet);
+        app.waitPls(1);
+        app.saveData(targetWallet, url);
+
+    }
+
+
+    @Test
+    public  void kassa_parse() throws IOException, InterruptedException{
+        setTestData();
+        rnd = getRnd(0, 5000);
+        int sum = 5000+rnd;
+        url="https://kassa.cc/";
+        app.getNavHelper().goToExchangerSite(url);
+        app.waitPls(5);
+        app.getBaseHelper().clickOnElByXpath("html/body/div[5]/div/div[1]/div[1]/div/div[4]/div/div[3]/div[6]");
+        app.getBaseHelper().typeTextIntoElementByXpath("html/body/div[5]/div/div[1]/div[1]/div/div[2]/div/div[1]/input", String.valueOf(sum));
+        app.getBaseHelper().clickOnElByXpath("html/body/div[5]/div/div[1]/div[2]/div/div[4]/div/div[3]/div[1]");
+        app.getBaseHelper().typeTextIntoElementByXpath("//div[@class='main_2Js']/div[3]/div/div[3]/label/input",bcData.getEmail());
+        app.getBaseHelper().typeTextIntoElementByXpath("//div[@class='main_2Js']/div[3]/div/div[4]/label/input",bcData.getQiwiWallet());
+        app.getBaseHelper().typeTextIntoElementByXpath("//div[@class='main_2Js']/div[3]/div/div[7]/label/input",bcData.getBCWallet());
+        app.waitPls(90);
+        app.getBaseHelper().clickOnElByID("sendRequest");
+        app.waitPls(2);
+        targetWallet =app.getBaseHelper().getTextByXpath(".//*[@id='modalInstructionSteps']/div[3]/div[2]/div/div[2]");
+        System.out.println("targetWallet: "+targetWallet);
+        app.waitPls(1);
+        app.saveData(targetWallet, url);
+        app.getBaseHelper().clickOnElByXpath("//*[@id='modalInstructionDialog']/div[3]/div[2]/button[2]");
+        app.waitPls(2);
+    }
+
+    /*
+    @Test
+    public void check_ip() throws Exception {
+
+        app.getNavHelper().goToExchangerSite("https://2ip.ua/ru/");
+        app.waitPls(5);
+    }
+    */
 
 }

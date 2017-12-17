@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="bc_parse_main" target="1.8" />
       <module name="bc_parse_test" target="1.8" />
+      <module name="bc_qiwi_parse_allure_main" target="1.8" />
+      <module name="bc_qiwi_parse_allure_test" target="1.8" />
       <module name="bc_qiwi_parse_main" target="1.8" />
       <module name="bc_qiwi_parse_test" target="1.8" />
     </bytecodeTargetLevel>

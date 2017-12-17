@@ -1,14 +1,28 @@
 import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.api.tasks.testing.Test
 
+buildscript {
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath "io.qameta.allure:allure-gradle:2.3"
+	}
+}
+
 apply plugin: 'java'
+apply plugin: 'io.qameta.allure'
+
 
 tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'
 }
+
+
 repositories {
 	mavenCentral()
 }
+
 
 configurations {
 	agent
@@ -28,3 +42,10 @@ task parseStart (type : Test) {
 
 }
 
+
+allure {
+	version = '2.2.1'
+	autoconfigure = true
+	aspectjweaver = true
+	allureJavaVersion = '2.0-BETA21'
+}
