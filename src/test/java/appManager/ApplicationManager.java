@@ -1,6 +1,8 @@
 package appManager;
 
+
 import objectModels.ProxyData;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.TakesScreenshot;
@@ -12,8 +14,10 @@ import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit;
 
 import io.qameta.allure.Step;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
 
 
 /**
@@ -129,6 +133,7 @@ public class ApplicationManager {
         wd.quit();
     }
 
+
     public BaseHelper getBaseHelper() {
         return baseHelper;
     }
@@ -139,5 +144,10 @@ public class ApplicationManager {
 
     public OrderHelper getOrderHelper() {
         return orderHelper;
+    }
+
+    //метод для снятия скринов
+    public byte[] takeScreen (){
+        return ((TakesScreenshot) wd).getScreenshotAs(OutputType.BYTES);
     }
 }

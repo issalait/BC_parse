@@ -55,3 +55,7 @@ allure {
 	aspectjweaver = true
 	allureJavaVersion = '2.0-BETA21'
 }
+
+parseStart.doFirst {
+	jvmArgs "-javaagent:${configurations.agent.singleFile}"
+}

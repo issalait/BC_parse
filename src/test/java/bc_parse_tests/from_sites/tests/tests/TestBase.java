@@ -1,17 +1,25 @@
 package bc_parse_tests.from_sites.tests.tests;
 
 import appManager.ApplicationManager;
-import org.testng.annotations.AfterMethod;
+
+import io.qameta.allure.Attachment;
+import listeners.TestListener;
+import org.testng.IHookCallBack;
+import org.testng.IHookable;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
+
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 
 import java.io.IOException;
 
 /**
  * Created by Любовь on 01.12.2017.
  */
+@Listeners(TestListener.class)
 public class TestBase {
+
 
     protected final ApplicationManager app = new ApplicationManager();
 
