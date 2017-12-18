@@ -80,7 +80,7 @@ public class BCTests extends TestBase {
 
 
 
-
+/*
     @Test(description = "https://fastchange.cc/")
     public void fastchage_parse() throws IOException, InterruptedException {
         url="https://fastchange.cc/";
@@ -100,7 +100,7 @@ public class BCTests extends TestBase {
         app.saveData(targetWallet, url);
 
     }
-
+*/
 
     @Test(description = "https://bankcomat.com/qiwi-na-bitcoin.html")
     public void bankomat_parse() throws IOException, InterruptedException {
@@ -119,13 +119,13 @@ public class BCTests extends TestBase {
         app.waitPls(2);
         targetWallet = app.getBaseHelper().getTextByXpath("//*[@id='order-confirmation-tab']/div/div/div[1]/div/ul/li[1]/span/p/span[1]/code");
         System.out.println("targetWallet: "+targetWallet);
-        app.getBaseHelper().clickOnElByID("order-cancel");
+        app.getBaseHelper().clickOnElByID("order-cancel-bug");
         app.waitPls(1);
         app.getBaseHelper().clickOnElByID("act-yes");
         app.saveData(targetWallet, url);
 
     }
-
+/*
     @Test(description = "http://365cash.co/")
     public void cash365_parse() throws IOException, InterruptedException {
         setTestData();

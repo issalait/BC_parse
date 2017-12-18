@@ -1,12 +1,18 @@
 package listeners;
 
+import appManager.ApplicationManager;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Attachment;
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
 import org.testng.ITestResult;
 
+import java.io.ByteArrayInputStream;
+
 import static io.qameta.allure.Allure.addByteAttachmentAsync;
 import static io.qameta.allure.Allure.addStreamAttachmentAsync;
 import static java.lang.ClassLoader.getSystemResourceAsStream;
+
 
 /**
  * Created by Любовь on 18.12.2017.
@@ -29,5 +35,20 @@ public class BaseListener implements IInvokedMethodListener {
             }
         }
     }
+    @Attachment
+    public void onTestFailure(ITestResult result) {
+        ApplicationManager app = (ApplicationManager) result.getTestContext().getAttribute("app");
+        saveScreenshot(app.takeScreenshot());
+
+    }
+
+    public void saveScreenshot(ByteArrayInputStream screenShot) {
+        Allure.addAttachment("Screenshot", "image/png", screenShot, "png");
+    }
+
+
+
+
+
 }
 

@@ -1,7 +1,9 @@
 package appManager;
 
 import objectModels.ProxyData;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Proxy;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -116,6 +118,10 @@ public class ApplicationManager {
         writer.write(String.format("%s;%s;%s\n", targetWallet, java.util.Calendar.getInstance().getTime(),url));
         writer.close();
 
+    }
+
+    public ByteArrayInputStream takeScreenshot() {
+        return new ByteArrayInputStream(((TakesScreenshot) wd).getScreenshotAs(OutputType.BYTES));
     }
 
     @AfterMethod(description = "close browser after")
