@@ -38,7 +38,8 @@ public class ApplicationManager {
     int rnd;
 
     @BeforeMethod(description = "Configure proxy and browser before tests")
-    public void init() throws IOException {
+    public void init() throws IOException, InterruptedException {
+       //waitBeforeStart();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(new File("C:/parser_settings/chromeProfile.csv")));
             String line = reader.readLine();
@@ -69,12 +70,19 @@ public class ApplicationManager {
         navHelper = new NavHelper(wd);
     }
 
+    private void waitBeforeStart() throws InterruptedException {
+        rnd = getRnd(1, 45);
+        System.out.println("Sleep before start, minutes : "+String.valueOf(rnd));
+        TimeUnit.MINUTES.sleep(rnd);
+    }
+
 
     public static int getRnd(int min, int max) {
         max -= min;
         return (int) (Math.random() * ++max) + min;
     }
 
+    @Step
     public void setProxy() throws IOException {
         min = 1; // Минимальное число для диапазона
         max = 5; // Максимальное число для диапазона

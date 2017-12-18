@@ -32,6 +32,7 @@ dependencies {
 	compile 'org.testng:testng:6.11'
 	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.53.1'
 	compile 'com.beust:jcommander:1.72'
+	compile 'org.projectlombok:lombok:1.16.18'
 	agent "org.aspectj:aspectjweaver:1.8.10"
 }
 

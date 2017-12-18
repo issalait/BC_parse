@@ -4,6 +4,7 @@ package bc_parse_tests.from_sites.tests.tests;
  * Created by Любовь on 28.11.2017.
  */
 
+import io.qameta.allure.Step;
 import jdk.nashorn.internal.runtime.NumberToString;
 import objectModels.BCData;
 import org.testng.annotations.Test;
@@ -80,7 +81,7 @@ public class BCTests extends TestBase {
 
 
 
-    @Test
+    @Test(description = "https://fastchange.cc/")
     public void fastchage_parse() throws IOException, InterruptedException {
         url="https://fastchange.cc/";
         app.getNavHelper().goToExchangerSite(url);
@@ -101,8 +102,7 @@ public class BCTests extends TestBase {
     }
 
 
-
-    @Test
+    @Test(description = "https://bankcomat.com/qiwi-na-bitcoin.html")
     public void bankomat_parse() throws IOException, InterruptedException {
 
         setTestData();
@@ -126,7 +126,7 @@ public class BCTests extends TestBase {
 
     }
 
-    @Test
+    @Test(description = "http://365cash.co/")
     public void cash365_parse() throws IOException, InterruptedException {
         setTestData();
         url="http://365cash.co/";
@@ -159,7 +159,7 @@ public class BCTests extends TestBase {
     }
 
 
-    @Test
+    @Test(description = "https://kassa.cc/")
     public  void kassa_parse() throws IOException, InterruptedException{
         setTestData();
         rnd = getRnd(0, 5000);

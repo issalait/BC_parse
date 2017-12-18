@@ -16,7 +16,7 @@ public class TestBase {
     protected final ApplicationManager app = new ApplicationManager();
 
     @BeforeTest
-    public void setUp() throws IOException {
+    public void setUp() throws IOException, InterruptedException {
 
         app.init();
 
