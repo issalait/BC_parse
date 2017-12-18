@@ -12,6 +12,6 @@ public class StepsLogger implements StepLifecycleListener {
 
     @Override
     public void beforeStepStop(final StepResult result) {
-        //log.info("Finishing step: {}", result.getName());
+        log.info("Finishing step: {}", result.getName());
     }
 }

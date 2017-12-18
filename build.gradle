@@ -43,6 +43,8 @@ task parseStart (type : Test) {
 		listeners << 'listeners.BaseListener'
 
 	}
+	systemProperty 'allure.model.indentOutput', true
+	systemProperty 'allure.results.directory', 'build/allure-results'
 
 }
 
