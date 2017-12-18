@@ -21,7 +21,9 @@ import java.sql.Driver;
 import static io.qameta.allure.Allure.addByteAttachmentAsync;
 import static io.qameta.allure.Allure.addStreamAttachmentAsync;
 import static java.lang.ClassLoader.getSystemResourceAsStream;
-
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
 
 /**
  * Created by Любовь on 18.12.2017.
@@ -40,15 +42,20 @@ public class BaseListener implements IInvokedMethodListener {
             addByteAttachmentAsync("Test log", "text/plain", "afterInvocationContent"::getBytes);
 
             if (!testResult.isSuccess()) {
-
+                /*
                 addStreamAttachmentAsync("Failure screenshot", "image/png", () ->
                         getSystemResourceAsStream("attachments/screenshot.png"));
-                        /*
+                        */
                 ApplicationManager app = (ApplicationManager) testResult.getTestContext().getAttribute("app");
-                saveScreenshot(app.takeScreenshot());
-                */
+                saveScreenshot(app.takeScreen());
+
             }
         }
+    }
+
+    @Attachment(value = "Page screenshot", type = "image/png")
+    public byte[] saveScreenshot(byte[] screenShot) {
+        return screenShot;
     }
 
 
