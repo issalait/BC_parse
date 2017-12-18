@@ -30,8 +30,11 @@ public class BaseListener implements IInvokedMethodListener {
             addByteAttachmentAsync("Test log", "text/plain", "afterInvocationContent"::getBytes);
 
             if (!testResult.isSuccess()) {
+                /*
                 addStreamAttachmentAsync("Failure screenshot", "image/png", () ->
-                        getSystemResourceAsStream("attachments/screenshot.png"));
+                        getSystemResourceAsStream("attachments/screenshot.png"));*/
+                ApplicationManager app = (ApplicationManager) testResult.getTestContext().getAttribute("app");
+                saveScreenshot(app.takeScreenshot());
             }
         }
     }
