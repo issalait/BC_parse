@@ -33,12 +33,15 @@ dependencies {
 	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.53.1'
 	compile 'com.beust:jcommander:1.72'
 	compile 'org.projectlombok:lombok:1.16.18'
+	compile 'org.assertj:assertj-core:3.8.0'
 	agent "org.aspectj:aspectjweaver:1.8.10"
 }
 
 task parseStart (type : Test) {
 	useTestNG {
 		suites "src/test/resources/testng.xml"
+		listeners << 'listeners.BaseListener'
+
 	}
 
 }

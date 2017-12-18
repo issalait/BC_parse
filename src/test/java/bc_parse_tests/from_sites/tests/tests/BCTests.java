@@ -109,7 +109,7 @@ public class BCTests extends TestBase {
         url="https://bankcomat.com/qiwi-na-bitcoin.html";
         app.getNavHelper().goToExchangerSite(url);
         app.waitPls(3);
-        app.getBaseHelper().typeTextIntoElementByID("give_col","5000");
+        app.getBaseHelper().typeTextIntoElementByID("give_col","10000");
         app.getBaseHelper().typeTextIntoElementByName("from_acc",bcData.getQiwiWallet());
         app.getBaseHelper().typeTextIntoElementByXpath("//div[@id='props']/div[2]/div/input",bcData.getEmail());
         app.waitPls(1);
